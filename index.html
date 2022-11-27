@@ -25,7 +25,7 @@
         const VOWELS = ["a", "e", "i", "o", "u"];
 
         function translate(message) {
-          return message.split(" ").map(translateWord).join(" ");
+          return message.toLowerCase().split(" ").map(translateWord).join(" ");
         }
 
         function translateWord(word) {
