@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Pig Latin Translator</title>
+    <link rel="stylesheet" type="text/css" href="translatorstyle.css">
+
+  </head>
+  <body>
+    
+    <nav class="header">PIG LATIN TRANSLATOR</nav>
+    
+    <div class="container">
+      <div class="text-input">
+        <textarea id="textInput" rows="10" cols="30" placeholder="Enter text"> </textarea>
+        <button id="translat">Translate</button>
+      </div>
+      <div class="text-output">
+        <textarea id="textOutput" rows="10" cols="30" placeholder="Translated text"></textarea>
+      </div>
+      <script>
+        const textInput = document.getElementById("textInput");
+        const textOutput = document.getElementById("textOutput");
+        const VOWELS = ["a", "e", "i", "o", "u"];
+
+        function translate(message) {
+          return message.split(" ").map(translateWord).join(" ");
+        }
+
+        function translateWord(word) {
+          for (var i = 0; i < word.length; i++) {
+            if (VOWELS.indexOf(word[i]) !== -1) break;
+            if (word.slice(i, i + 2) === "qu") i += 1;
+          }
+          return word.slice(i) + word.slice(0, i) + "ay";
+        }
+
+        document.getElementById("translat").addEventListener("click", translateWW);
+
+        function translateWW() {
+          textOutput.innerText = translate(textInput.value)
+        }
+
+      </script>
+
+    </div>
+
+    <footer class="footer">MADE BY JENISH ALI BORAH & NEEHARIKA SONOWAL</footer>
+  </body>
+    
+    
+</html>    
