@@ -1,8 +1,8 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: cursive;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   .header {
     font-size: 40px;
@@ -39,7 +39,9 @@
   .btn{
     padding: 49px;
     justify-content: center;
-    left: 24vh;
+    align-items: center;
+    display: flex;
+    
   }
   #translat {
     background-color: #2146C7;
@@ -47,7 +49,6 @@
     height: 5vh;
     width: 20vw;
     font-size: larger;
-    margin-left: 25vw;
     cursor: pointer;
     color: #FFE7CC;
     transition: all 0.3s ease;
