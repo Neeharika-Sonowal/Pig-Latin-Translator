@@ -29,17 +29,19 @@
         }
 
         function translateWord(word) {
-          for (var i = 0; i < word.length; i++) {
-            if (VOWELS.indexOf(word[i]) !== -1) break;
-            if (word.slice(i, i + 2) === "qu") i += 1;
+          if (word.length > 0) {
+            for (var i = 0; i < word.length; i++) {
+              if (VOWELS.indexOf(word[i]) !== -1) break;
+              if (word.slice(i, i + 2) === "qu") i += 1;
+            }
+            return word.slice(i) + word.slice(0, i) + "ay";
           }
-          return word.slice(i) + word.slice(0, i) + "ay";
         }
 
         document.getElementById("translat").addEventListener("click", translateWW);
 
         function translateWW() {
-          textOutput.innerText = translate(textInput.value)
+          if (textInput.value != "") textOutput.innerText = translate(textInput.value);
         }
 
       </script>
